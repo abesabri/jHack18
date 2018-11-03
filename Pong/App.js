@@ -33,7 +33,7 @@ class GenerateScreen extends React.Component {
     isFirstLaunch: false,
     hasCheckedAsyncStorage: false
   };
-  
+
   async componentWillMount() {
     const isFirstLaunch = await checkIfFirstLaunch();
     this.setState({ isFirstLaunch, hasCheckedAsyncStorage: true });
@@ -41,11 +41,11 @@ class GenerateScreen extends React.Component {
   render() {
     {
       const { hasCheckedAsyncStorage, isFirstLaunch } = this.state;
-  
+
       if (!hasCheckedAsyncStorage) {
         return null;
       }
-  
+
       if (isFirstLaunch) {
         return <Login />
       } else {
@@ -55,9 +55,50 @@ class GenerateScreen extends React.Component {
   }
 }
 
-export default createBottomTabNavigator({
-  Camera: { screen: CameraScreen },
-  Friends: { screen: FriendsScreen },
-  Generate: {screen: GenerateScreen},
-});
+export default createBottomTabNavigator(
+  {
+    Camera: {
+      screen: CameraScreen,
+      navigationOptions: () => ({
+          tabBarIcon: ({tintColor}) => (
+              <Icon
+                  name="play"
+                  color={tintColor}
+                  size={24}
+              />
+          )
+      })
+    },
+    Friends: { screen: FriendsScreen,
+      navigationOptions: () => ({
+          tabBarIcon: ({tintColor}) => (
+              <Icon
+                  name="play"
+                  color={tintColor}
+                  size={24}
+              />
+          )
+      }) },
+    Generate: {screen: GenerateScreen,
+      navigationOptions: () => ({
+          tabBarIcon: ({tintColor}) => (
+              <Icon
+                  name="play"
+                  color={tintColor}
+                  size={24}
+              />
+          )
+      })}
+  },
+  {
+    tabBarOptions: {
+        showLabel: true, // hide labels
+        activeTintColor: '#F8F8F8', // active icon color
+        inactiveTintColor: '#808080',  // inactive icon color
+        style: {
+            backgroundColor: 'black' // TabBar background
+        }
+    }
+  }
+);
 
