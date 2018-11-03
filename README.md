@@ -1,5 +1,6 @@
-# hackUPC2018
-This repository is for developing our HackUPC 2018 project.
+# JacobsHack2018
+
+This repository is for developing our Jacobs Hack 2018 project.
 
 ## Getting Started
 
@@ -23,4 +24,4 @@ TBD
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/TudorMaiereanu/hackUPC2018/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/aadilk96/jHack18/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
