@@ -24,11 +24,12 @@ export default class Generator extends Component {
     stateSnapchat: false,
     stateInstagram: false,
     stateTwitter: false,
-    phone: '+407696969',
-    name: 'Tudor'
+    phone: '',
+    name: 'Name'
   };
 
   render() {
+    const nametitle = this.state.name.charAt(0);
     const {facebook, linkedin, snapchat, instagram, twitter, phone, name} = this.state;
     const fb = this.state.stateFacebook === true ? `${this.state.facebook}` : null;
     const tw = this.state.stateTwitter === true ? `${this.state.twitter}` : null;
@@ -51,7 +52,7 @@ export default class Generator extends Component {
           <Avatar
             size="small"
             rounded
-            title="TM"
+            title= {nametitle}
             onPress={() => console.log("Works!")}
             activeOpacity={0.7}
           />
