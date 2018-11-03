@@ -115,6 +115,7 @@ export default class Generator extends Component {
         </View>
         <Button
           title="Pong me"
+          backgroundColor='#990407'
           onPress={() => {
           this.popupDialog.show();
         }}
