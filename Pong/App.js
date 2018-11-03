@@ -62,9 +62,10 @@ export default createBottomTabNavigator(
       navigationOptions: () => ({
           tabBarIcon: ({tintColor}) => (
               <Icon
-                  name="play"
-                  color={tintColor}
-                  size={24}
+                name='camera'
+                type='evilicon'
+                color= {tintColor}
+                size={24}
               />
           )
       })
@@ -73,9 +74,10 @@ export default createBottomTabNavigator(
       navigationOptions: () => ({
           tabBarIcon: ({tintColor}) => (
               <Icon
-                  name="play"
-                  color={tintColor}
-                  size={24}
+                name='user'
+                type='font-awesome'
+                color= {tintColor}
+                size={24}
               />
           )
       }) },
@@ -83,9 +85,10 @@ export default createBottomTabNavigator(
       navigationOptions: () => ({
           tabBarIcon: ({tintColor}) => (
               <Icon
-                  name="play"
-                  color={tintColor}
-                  size={24}
+                name='barcode'
+                type='font-awesome'
+                color= {tintColor}
+                size={24}
               />
           )
       })}
