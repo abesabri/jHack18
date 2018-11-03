@@ -8,7 +8,8 @@ import {
     AppRegistry,
     StyleSheet,
     View,
-    TextInput
+    TextInput,
+    Alert
 } from 'react-native';
 
 
@@ -53,13 +54,6 @@ export default class Login extends Component {
                   .then(res2 => {
                     AsyncStorage.setItem('userId', res2.id.toString())
                 });
-                //console.log(response)
-                // .then(() => {
-                //     //AsyncStorage.setItem('userId', )
-                //     console.log(response);
-                //   // console.log(JSON.stringify(data))
-                // })
-                // console.log(response)
           }
 
   render() {
@@ -143,6 +137,7 @@ export default class Login extends Component {
           title="Update"
           onPress={() => {
             this.postData()
+            Alert.alert('Successfully updated your info!')
           }}
         />
       </View>
