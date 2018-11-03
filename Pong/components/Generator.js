@@ -8,7 +8,8 @@ import {
   FormValidationMessage,
   SocialIcon,
   Icon,
-  Avatar
+  Avatar,
+  ImageBackground
 } from "react-native-elements";
 import PopupDialog from "react-native-popup-dialog";
 
@@ -61,10 +62,19 @@ export default class Generator extends Component {
     };
     return (
       <View style={styles.container}>
-        <Image
-          source={require("./Pong_Logo.png")}
-          style={{ width: 150, height: 75 }}
-        />
+        <View style={styles.backgroundContainer}>
+          <Image
+            source={require("./bg.png")}
+            resizeMode="cover"
+            style={styles.backdrop}
+          />
+        </View>
+        <View style={styles.overlay}>
+          <Image
+            source={require("./Pong_Logo.png")}
+            style={{ width: 145, height: 70 }}
+          />
+        </View>
         <View style={styles.inrow_name}>
           <Avatar
             size="small"
@@ -127,12 +137,12 @@ export default class Generator extends Component {
           <SocialIcon type="linkedin" />
           <TextInput
             style={styles.input}
-            onChangeText={text => this.setState({ instagram: text })}
+            onChangeText={text => this.setState({ linkedin: text })}
             value={this.state.text}
           />
         </View>
         <Button
-          title="Pong me"
+          title="Pong Me"
           onPress={() => {
             this.popupDialog.show();
           }}
@@ -160,29 +170,42 @@ export default class Generator extends Component {
 }
 
 const styles = StyleSheet.create({
+  backgroundContainer: {
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0
+  },
   container: {
     flex: 1,
-    backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center"
   },
-
+  overlay: {
+    opacity: 0.5,
+    backgroundColor: "#000000"
+  },
   inrow: {
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row"
   },
-
+  backdrop: {
+    flex: 1,
+    flexDirection: "column"
+  },
   inrow_name: {
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
-    height: 60
+    height: 60,
+    marginLeft: 15
   },
 
   input: {
     height: 40,
-    borderColor: "gray",
+    borderColor: "black",
     borderWidth: 1,
     margin: 10,
     borderRadius: 5,
@@ -192,7 +215,7 @@ const styles = StyleSheet.create({
 
   inputPhone: {
     height: 40,
-    borderColor: "gray",
+    borderColor: "black",
     borderWidth: 1,
     margin: 10,
     borderRadius: 5,
@@ -204,8 +227,9 @@ const styles = StyleSheet.create({
   inputName: {
     fontSize: 20,
     height: 40,
-    borderColor: "gray",
+    borderColor: "black",
     margin: 10,
+    marginLeft: 25,
     borderRadius: 5,
     padding: 5,
     width: 200
