@@ -27,8 +27,8 @@ export default class Generator extends Component {
     stateSnapchat: false,
     stateInstagram: false,
     stateTwitter: false,
-    phone: "",
-    name: "Username"
+    phone: false,
+    name: 'Username'
   };
 
   render() {
@@ -79,7 +79,7 @@ export default class Generator extends Component {
           <Avatar
             size="small"
             rounded
-            title="TM"
+            title="UN"
             onPress={() => console.log("Works!")}
             activeOpacity={0.7}
           />
@@ -142,7 +142,9 @@ export default class Generator extends Component {
           />
         </View>
         <Button
-          title="Pong Me"
+          title="Pong me"
+          backgroundColor='#990407'
+
           onPress={() => {
             this.popupDialog.show();
           }}
