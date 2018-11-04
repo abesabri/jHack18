@@ -28,7 +28,7 @@ export default class Generator extends Component {
     stateInstagram: false,
     stateTwitter: false,
     phone: false,
-    name: 'Username'
+    name: "Username"
   };
 
   render() {
@@ -64,7 +64,7 @@ export default class Generator extends Component {
       <View style={styles.container}>
         <View style={styles.backgroundContainer}>
           <Image
-            source={require("./bg.png")}
+            source={require("./b.png")}
             resizeMode="cover"
             style={styles.backdrop}
           />
@@ -142,9 +142,10 @@ export default class Generator extends Component {
           />
         </View>
         <Button
-          title="Pong me"
-          backgroundColor='#990407'
-
+          title="Pong Me"
+          color="#FF0000"
+          backgroundColor="#FFFFFF"
+          fontWeight="bold"
           onPress={() => {
             this.popupDialog.show();
           }}
